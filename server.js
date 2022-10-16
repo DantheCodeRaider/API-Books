@@ -9,12 +9,12 @@ const app = express()
 // MIDDLEWARE
 app.use(express.urlencoded({ extended: true }))
 
-//Routes
+// ROUTES
 app.get('/', (req, res) => {
     res.send('home')
 })
 
-// Places
+// BOOKS
 const booksController = require('./controllers/books.js')
 app.use('/books', booksController)
 
