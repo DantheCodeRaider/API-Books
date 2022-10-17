@@ -4,14 +4,18 @@ const express = require('express')
 // CONFIGURATION
 require('dotenv').config()
 const PORT = process.env.PORT
+var cors = require('cors')
 const app = express()
 
 // MIDDLEWARE
 app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
 
 // ROUTES
 app.get('/', (req, res) => {
-    res.send('home')
+    res.json({
+    message: 'Hello World'
+    })
 })
 
 // BOOKS
